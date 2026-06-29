@@ -15,7 +15,7 @@ Premium consultative pitch deck for **Zerosix** (agency targeting clients withou
 ## Run locally
 
 ```bash
-cd /Users/furkan/Documents/pitchclientzs/pp1
+cd pp1   # or full path: /Users/furkan/Documents/pitchclientzs/pp1
 python3 -m http.server 3456
 ```
 
@@ -29,10 +29,12 @@ Build copies only `index.html`, `css/`, `js/`, `assets/` → `public/` (~112 KB)
 
 | Setting | Value |
 |---------|--------|
-| **Root directory** | `pp1` |
+| **Root directory** | `/` (repo root — files are at top level) |
 | **Build command** | `npm run build` |
 | **Deploy command** | `npx wrangler deploy` |
 | **Output directory** | `public` |
+
+**Git remote:** `https://github.com/fwrkzn/pitchavecsite.git`
 
 **Cloudflare Workers:** `wrangler.toml` sets `assets.directory = "./public"` — fixes the 121 MiB `node_modules` upload error.
 
