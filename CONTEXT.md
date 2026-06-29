@@ -23,6 +23,26 @@ Open: **http://localhost:3456**
 
 ---
 
+## Deploy (static)
+
+Build copies only `index.html`, `css/`, `js/`, `assets/` → `public/` (~112 KB). Excludes `node_modules`, pptx, etc.
+
+| Setting | Value |
+|---------|--------|
+| **Build command** | `npm run build` |
+| **Deploy command** | `npx wrangler deploy` |
+| **Output directory** | `public` |
+
+**Cloudflare Workers:** `wrangler.toml` sets `assets.directory = "./public"` — fixes the 121 MiB `node_modules` upload error.
+
+**Do not** use `npx start` as build/deploy command.
+
+**Vercel:** `vercel.json` → build `public/`, output `public`.
+
+**Local preview of production build:** `npm run build && npx serve public`
+
+---
+
 ## File structure
 
 | File | Role |
